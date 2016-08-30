@@ -15,7 +15,6 @@
         #container {
             width: 100%;
         }
-
     </style>
 
     <taglib uri="http://tiles.apache.org/tags-tiles" prefix="spring"/>
@@ -42,7 +41,8 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -60,18 +60,20 @@
         </div><!--/.container-fluid -->
     </nav>
     <div id="sidebar">
-    <ul class="nav nav-pills nav-stacked">
-        <tiles:insertAttribute name="menu"/>
-        <br><br>
-    </ul>
+        <ul class="nav nav-pills nav-stacked">
+            <tiles:insertAttribute name="menu"/>
+            <br><br>
+        </ul>
     </div>
     <div id="container">
-    <tiles:insertAttribute name="body"/>
-    <br><br>
+        <tiles:insertAttribute name="body"/>
+        <br><br>
     </div>
-    <center>
-        <tiles:insertAttribute name="footer"/>
-    </center>
+    <div style="  position: absolute; bottom: 15px;">
+        <center>
+            <tiles:insertAttribute name="footer"/>
+        </center>
+    </div>
 </div>
 </body>
 </html>
