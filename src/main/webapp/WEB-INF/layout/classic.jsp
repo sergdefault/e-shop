@@ -5,6 +5,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style type="text/css">
+        #sidebar {
+            width: 200px;
+            float: left;
+            padding-right: 25px;
+        }
+
+        #container {
+            width: 100%;
+        }
+
+    </style>
 
     <taglib uri="http://tiles.apache.org/tags-tiles" prefix="spring"/>
 
@@ -47,10 +59,16 @@
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </nav>
-
-    <tiles:insertAttribute name="menu"/>
+    <div id="sidebar">
+    <ul class="nav nav-pills nav-stacked">
+        <tiles:insertAttribute name="menu"/>
+        <br><br>
+    </ul>
+    </div>
+    <div id="container">
     <tiles:insertAttribute name="body"/>
     <br><br>
+    </div>
     <center>
         <tiles:insertAttribute name="footer"/>
     </center>

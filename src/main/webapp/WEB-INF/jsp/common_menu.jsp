@@ -1,5 +1,5 @@
-<ol>
-    <li>Первый пункт</li>
-    <li>Второй пункт</li>
-    <li>Третий пункт</li>
-</ol>
+<li role="presentation" class="active"><a href="#">Home</a></li>
+<li role="presentation"><a href="#">Profile</a></li>
+<li role="presentation"><a href="#">Messages</a></li>
+<li role="presentation"><a href="#">Messages</a></li>
+<li role="presentation"><a href="#">Messages</a></li>
