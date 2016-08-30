@@ -48,7 +48,7 @@
         </div><!--/.container-fluid -->
     </nav>
 
-
+    <tiles:insertAttribute name="menu"/>
     <tiles:insertAttribute name="body"/>
     <br><br>
     <center>

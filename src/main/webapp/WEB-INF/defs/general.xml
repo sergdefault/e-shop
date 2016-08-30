@@ -8,6 +8,7 @@
 	</definition>
 	<definition name="index" extends="common">
 		<put-attribute name="title" value="e-shop" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/common_menu.jsp" />
 		<put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
 	</definition>
 </tiles-definitions>
