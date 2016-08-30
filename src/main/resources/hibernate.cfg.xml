@@ -23,7 +23,7 @@
         </property>
 
         <!-- List of XML mapping files -->
-        <mapping resource="category.xml"/>
+        <mapping resource="beans.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

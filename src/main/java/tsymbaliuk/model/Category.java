@@ -1,14 +1,28 @@
 package tsymbaliuk.model;
 
+import javax.persistence.*;
+import java.util.Set;
+
 /**
  * Created by Цымбалюк Сергей on 30.08.2016.
  */
+
 public class Category {
     private int id;
     private String title;
     private String description;
+    private Set products;
+
 
     public Category() {
+    }
+
+    public Set getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set products) {
+        this.products = products;
     }
 
     public int getId() {

@@ -13,4 +13,14 @@
         <property name="title" column="title" type="string"/>
         <property name="description" column="description" type="string"/>
     </class>
+
+    <class name="tsymbaliuk.model.Product" table="Category">
+    <meta attribute="class-description">
+        This class contains Product details.
+    </meta>
+    <id name="id" type="int" column="id">
+        <generator class="native"/>
+    </id>
+    <property name="title" column="title" type="string"/>
+    <property name="description"
 </hibernate-mapping>
