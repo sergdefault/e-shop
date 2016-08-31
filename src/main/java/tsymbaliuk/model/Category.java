@@ -1,6 +1,6 @@
 package tsymbaliuk.model;
 
-import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -11,7 +11,7 @@ public class Category {
     private int id;
     private String title;
     private String description;
-    private Set products;
+    private Set products =new HashSet();
 
 
     public Category() {
