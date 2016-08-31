@@ -5,12 +5,21 @@ package tsymbaliuk.model;
  */
 public class Product {
     private int id;
+    private String title;
     private String shortDescription;
     private String description;
     private double price;
     private long categoryId;
 
     public Product() {
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public int getId() {

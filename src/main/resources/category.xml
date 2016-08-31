@@ -3,24 +3,19 @@
         "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="tsymbaliuk.model.Category" table="Category">
+    <class name="tsymbaliuk.model.Category" table="categories">
         <meta attribute="class-description">
             This class contains category's details.
         </meta>
-        <id name="id" type="int" column="id">
+        <id name="id" type="int" column="category_id">
             <generator class="native"/>
         </id>
         <property name="title" column="title" type="string"/>
         <property name="description" column="description" type="string"/>
-    </class>
 
-    <class name="tsymbaliuk.model.Product" table="Category">
-    <meta attribute="class-description">
-        This class contains Product details.
-    </meta>
-    <id name="id" type="int" column="id">
-        <generator class="native"/>
-    </id>
-    <property name="title" column="title" type="string"/>
-    <property name="description"
+        <set name="products" lazy="false">
+            <key column="category_id"/>
+            <one-to-many class="tsymbaliuk.model.Category"/>
+        </set>
+    </class>
 </hibernate-mapping>
