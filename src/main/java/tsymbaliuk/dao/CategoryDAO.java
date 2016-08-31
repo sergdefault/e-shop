@@ -11,7 +11,7 @@ import java.util.Collection;
  */
 public interface CategoryDAO {
     public void addCategory(Category category) throws SQLException;
-    public void updateCategory(Long category_id, Category category) throws SQLException;
+    public void updateCategory(int category_id, Category category) throws SQLException;
     public Category getCategoryById(Long category_id) throws SQLException;
     public Collection getAllCategories() throws SQLException;
     public void deleteCategory(Category category) throws SQLException;

@@ -29,10 +29,12 @@ public class CategoryDaoImpl implements CategoryDAO {
     }
 
     @Override
-    public void updateCategory(Long category_id, Category category) throws SQLException {
+    public void updateCategory(int category_id, Category category) throws SQLException {
         try {
             session.beginTransaction();
             Category cat= session.load(Category.class,category_id);
+            cat.setDescription(category.getDescription());
+            cat.setTitle(category.getTitle());
             session.flush();
             session.getTransaction().commit();
         } catch (Exception e) {
@@ -77,10 +79,10 @@ public class CategoryDaoImpl implements CategoryDAO {
 
     public static void main(String[] args) {
         Category cat = new Category();
-        cat.setTitle("4321");
-        cat.setDescription("4321");
+        cat.setTitle("43214321");
+        cat.setDescription("43214321");
         try {
-            new CategoryDaoImpl().addCategory(cat);
+            new CategoryDaoImpl().updateCategory(2,cat);
         } catch (SQLException e) {
             e.printStackTrace();
         }
