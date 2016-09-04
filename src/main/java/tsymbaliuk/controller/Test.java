@@ -3,10 +3,14 @@ package tsymbaliuk.controller;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import tsymbaliuk.dao.daoImpl.CategoryDaoImpl;
+import tsymbaliuk.model.Category;
 import tsymbaliuk.model.Product;
 import tsymbaliuk.util.HibernateUtil;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -14,17 +18,10 @@ import java.util.List;
  */
 public class Test {
     public static void main(String[] args) {
-        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
-        Session session = sessionFactory.openSession();
-        List<Product> prosucts = new ArrayList<>();
-        session.beginTransaction();
-        Query query = session.createQuery("from Product");
-        prosucts = (List<Product>) query.list();
-        for (Product product:prosucts) {
-            System.out.println(product.toString());
-        }
-        session.getTransaction().commit();
-        sessionFactory.close();
+
+            Category category = new CategoryDaoImpl().getCategoryById(1);
+            System.out.println(category);
+
 
     }
 
