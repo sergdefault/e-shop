@@ -1,7 +1,6 @@
 package tsymbaliuk.dao;
 
 import tsymbaliuk.model.Category;
-import tsymbaliuk.model.Product;
 
 import java.sql.SQLException;
 import java.util.Collection;

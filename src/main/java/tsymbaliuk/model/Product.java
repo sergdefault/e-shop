@@ -9,9 +9,17 @@ public class Product {
     private String shortDescription;
     private String description;
     private double price;
-    private long categoryId;
+    private Category category;
 
     public Product() {
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public String getTitle() {
@@ -54,22 +62,4 @@ public class Product {
         this.price = price;
     }
 
-    public long getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(long categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", shortDescription='" + shortDescription + '\'' +
-                ", description='" + description + '\'' +
-                ", price=" + price +
-                ", categoryId=" + categoryId +
-                '}';
-    }
 }

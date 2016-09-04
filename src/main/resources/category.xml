@@ -12,10 +12,14 @@
         </id>
         <property name="title" column="title" type="string"/>
         <property name="description" column="description" type="string"/>
-
-        <set name="products" lazy="false">
-            <key column="category_id"/>
-            <one-to-many class="tsymbaliuk.model.Category"/>
+        
+        <set name="products" table="products">
+            <key>
+                <column name="id" not-null="true"/>
+            </key>
+            <one-to-many node="products" class="tsymbaliuk.model.Product"/>
         </set>
+
+
     </class>
 </hibernate-mapping>

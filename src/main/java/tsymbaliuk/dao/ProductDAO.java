@@ -14,6 +14,7 @@ public interface ProductDAO {
     public void updateProduct(Long product_id, Product product) throws SQLException;
     public Category getProductById(Long product_id) throws SQLException;
     public Collection getAllProducts() throws SQLException;
+    public Collection getAllProductsByCategory(Category category) throws SQLException;
     public void deleteProduct(Product product ) throws SQLException;
     public Collection getCategoriesByProduct(Product product) throws SQLException;
 }
