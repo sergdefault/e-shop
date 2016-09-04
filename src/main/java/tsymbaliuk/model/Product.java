@@ -1,14 +1,27 @@
 package tsymbaliuk.model;
 
+import javax.persistence.*;
+
 /**
  * Created by Цымбалюк Сергей on 30.08.2016.
  */
+@Entity
+@Table(name ="products")
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @Column(name = "product_id")
     private int id;
+    @Column(name = "title")
     private String title;
+    @Column(name = "short_description")
     private String shortDescription;
+    @Column(name = "description")
     private String description;
-    private double price;
+    @Column (name = "price")
+    private float price;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
     private Category category;
 
     public Product() {
@@ -22,20 +35,20 @@ public class Product {
         this.category = category;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getShortDescription() {
@@ -54,12 +67,23 @@ public class Product {
         this.description = description;
     }
 
-    public double getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", shortDescription='" + shortDescription + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", category=" + category +
+                '}';
+    }
 }

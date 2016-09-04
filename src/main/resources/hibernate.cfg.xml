@@ -33,11 +33,12 @@
         <property name="show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="hbm2ddl.auto">update</property>
 
         <!-- List of XML mapping files -->
-        <mapping resource="category.xml"/>
-        <mapping resource="product.xml"/>
+        <!--<mapping class="tsymbaliuk.model.Product"/>-->
+        <mapping class="tsymbaliuk.model.Category"/>
+        <mapping class="tsymbaliuk.model.Product"/>
 
     </session-factory>
 </hibernate-configuration>

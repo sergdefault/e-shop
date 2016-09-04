@@ -1,10 +1,7 @@
 package tsymbaliuk.util;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-import tsymbaliuk.model.Category;
 
 /**
  * Created by Цымбалюк Сергей on 31.08.2016.

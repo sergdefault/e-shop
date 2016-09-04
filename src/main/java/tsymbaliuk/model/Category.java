@@ -1,17 +1,24 @@
 package tsymbaliuk.model;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Created by Цымбалюк Сергей on 30.08.2016.
  */
-
+@Entity
+@Table(name = "categories")
 public class Category {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @Column(name = "category_id")
+    private int category_id;
+    @Column(name = "title")
     private String title;
+    @Column(name = "description")
     private String description;
+    @OneToMany(mappedBy = "category")
     private Set<Product> products;
 
 
@@ -24,14 +31,6 @@ public class Category {
 
     public void setProducts(Set<Product> products) {
         this.products = products;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -50,10 +49,18 @@ public class Category {
         this.description = description;
     }
 
+    public int getCategory_id() {
+        return category_id;
+    }
+
+    public void setCategory_id(int category_id) {
+        this.category_id = category_id;
+    }
+
     @Override
     public String toString() {
         return "Category{" +
-                "id=" + id +
+                "category_id=" + category_id +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 '}';
