@@ -18,10 +18,11 @@ import java.util.List;
  */
 public class Test {
     public static void main(String[] args) {
-
-            Category category = new CategoryDaoImpl().getCategoryById(1);
-            System.out.println(category);
-
+            Category category = new Category();
+            category.setDescription("dfdfgdfg");
+            category.setCategory_id(2);
+            category.setTitle("dfgdf");
+            new CategoryDaoImpl().updateCategory(category);
 
     }
 

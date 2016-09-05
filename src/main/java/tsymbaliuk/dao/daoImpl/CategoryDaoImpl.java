@@ -1,14 +1,11 @@
 package tsymbaliuk.dao.daoImpl;
 
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import tsymbaliuk.dao.CategoryDAO;
 import tsymbaliuk.model.Category;
-import tsymbaliuk.model.Product;
 import tsymbaliuk.util.HibernateUtil;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -18,13 +15,35 @@ import java.util.List;
  */
 public class CategoryDaoImpl implements CategoryDAO {
     @Override
-    public void addCategory(Category category) throws SQLException {
-
+    public void addCategory(Category category){
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        try {
+            session.beginTransaction();
+            session.save(category);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            session.getTransaction().commit();
+            sessionFactory.close();
+        }
     }
 
     @Override
-    public void updateCategory(int category_id, Category category) throws SQLException {
-
+    public void updateCategory(Category category) {
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            session.update(category);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+           e.printStackTrace();
+        } finally {
+            session.getTransaction().commit();
+            sessionFactory.close();
+        }
     }
 
     @Override
@@ -45,7 +64,7 @@ public class CategoryDaoImpl implements CategoryDAO {
     }
 
     @Override
-    public Collection getAllCategories() throws SQLException {
+    public Collection getAllCategories()  {
         SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         List<Category> categories = new ArrayList<>();
@@ -63,7 +82,17 @@ public class CategoryDaoImpl implements CategoryDAO {
     }
 
     @Override
-    public void deleteCategory(Category category) throws SQLException {
-
+    public void deleteCategory(Category category){
+        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        try {
+            session.beginTransaction();
+            session.delete(category);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            session.getTransaction().commit();
+            sessionFactory.close();
+        }
     }
 }
