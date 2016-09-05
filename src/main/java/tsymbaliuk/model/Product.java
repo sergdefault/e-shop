@@ -1,6 +1,7 @@
 package tsymbaliuk.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Цымбалюк Сергей on 30.08.2016.
@@ -24,7 +25,18 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
+    @ManyToMany(mappedBy = "products")
+    private List <Order> orders;
+
     public Product() {
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     public Category getCategory() {
