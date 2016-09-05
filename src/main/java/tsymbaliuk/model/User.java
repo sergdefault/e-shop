@@ -1,6 +1,7 @@
 package tsymbaliuk.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,11 +23,11 @@ public class User {
 
 
     @OneToMany(mappedBy = "user")
-    private List<Order> orders;
+    private List<Order> orders =new ArrayList<>();
 
     @ManyToMany
-    @JoinColumn
-    private List <Role> roles;
+    @JoinTable
+    private List<Role>roles=new ArrayList<>();
 
     public User() {
     }

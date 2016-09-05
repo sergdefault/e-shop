@@ -1,6 +1,7 @@
 package tsymbaliuk.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,8 +20,8 @@ public class Order {
     private User user;
 
     @ManyToMany
-    @JoinColumn
-    private List<Product>products;
+    @JoinTable
+    private List<Product>products = new ArrayList<>();
 
     public Order() {
     }

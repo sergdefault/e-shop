@@ -1,6 +1,7 @@
 package tsymbaliuk.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,7 +27,7 @@ public class Product {
     private Category category;
 
     @ManyToMany(mappedBy = "products")
-    private List <Order> orders;
+    private List <Order> orders =new ArrayList<>();
 
     public Product() {
     }
