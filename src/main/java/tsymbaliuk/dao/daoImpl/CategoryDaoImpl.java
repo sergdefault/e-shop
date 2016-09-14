@@ -64,7 +64,7 @@ public class CategoryDaoImpl implements CategoryDAO {
     }
 
     @Override
-    public Collection getAllCategories()  {
+    public  List<Category> getAllCategories()  {
         SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         List<Category> categories = new ArrayList<>();
@@ -74,12 +74,14 @@ public class CategoryDaoImpl implements CategoryDAO {
 
         }catch (Exception e){
             e.printStackTrace();
-        }finally {
-            session.getTransaction().commit();
-            sessionFactory.close();
         }
+//        finally {
+//            session.getTransaction().commit();
+//            sessionFactory.close();
+//        }
         return categories;
     }
+
 
     @Override
     public void deleteCategory(Category category){

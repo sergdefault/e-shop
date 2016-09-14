@@ -18,11 +18,21 @@ public class Category {
     private String title;
     @Column(name = "description")
     private String description;
+    @Column (name="img_name")
+    private String imgName;
     @OneToMany(mappedBy = "category")
     private Set<Product> products;
 
 
     public Category() {
+    }
+
+    public String getImgName() {
+        return imgName;
+    }
+
+    public void setImgName(String imgName) {
+        this.imgName = imgName;
     }
 
     public Set<Product> getProducts() {

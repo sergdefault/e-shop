@@ -55,20 +55,33 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="${current == 'index' ? 'active' :''}"><a href="<spring:url value="/"/> ">Home</a></li>
-                    <li class="${current == 'about' ? 'active' :''}"><a href="<spring:url value="/about.html"/> ">About</a></li>
+                    <li class="${current == 'about' ? 'active' :''}"><a
+                            href="<spring:url value="/about.html"/> ">About</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </nav>
-    <div id="sidebar">
-        <ul class="nav nav-pills nav-stacked">
-            <tiles:insertAttribute name="menu"/>
+    <div class="row">
+        <div class="col-md-2">
+        <div id="sidebar">
+            <ul class="nav nav-pills nav-stacked">
+                <tiles:insertAttribute name="menu"/>
+                <br><br>
+            </ul>
+        </div>
+        </div>
+        <div class="col-md-9">
+        <div id="container">
+            <tiles:insertAttribute name="body"/>
             <br><br>
-        </ul>
-    </div>
-    <div id="container">
-        <tiles:insertAttribute name="body"/>
-        <br><br>
+            <div style="  position: absolute; bottom: 15px;">
+                <center>
+                    <tiles:insertAttribute name="footer"/>
+                </center>
+            </div>
+        </div>
+            </div>
+
     </div>
     <div style="  position: absolute; bottom: 15px;">
         <center>
