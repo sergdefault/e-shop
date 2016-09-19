@@ -8,7 +8,7 @@
         <center><h1>${categori.title}</h1></center>
         <div class="media">
             <div >
-                <a href="#">
+                <a href="${categori.category_id}">
                     <img class="media-object" src="img/${categori.imgName}.png" alt="...">
                 </a>
             </div>

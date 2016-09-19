@@ -14,14 +14,19 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     @Column(name = "category_id")
     private int category_id;
+
     @Column(name = "title")
     private String title;
+
     @Column(name = "description")
     private String description;
+
     @Column (name="img_name")
     private String imgName;
+
     @OneToMany(mappedBy = "category")
     private Set<Product> products;
+
 
 
     public Category() {
