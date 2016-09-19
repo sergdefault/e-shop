@@ -13,12 +13,9 @@
                 </a>
             </div>
             <div class="media-body">
-                <h4 class="media-heading">Media heading</h4>
+                <h4 class="media-heading"> <center>${categori.description}</center></h4>
             </div>
         </div>
-        <h4>
-            <center>${categori.description}</center>
-        </h4>
     </div>
 </c:forEach>
 
