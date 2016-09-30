@@ -1,20 +1,14 @@
 package tsymbaliuk.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Required;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import tsymbaliuk.dao.impl.CategoryDaoImpl;
 import tsymbaliuk.service.CategoryService;
 
 @Controller
-//@Configuration
-//@ComponentScan("tsymbaliuk.service")
 public class IndexController {
 
 	@Autowired
