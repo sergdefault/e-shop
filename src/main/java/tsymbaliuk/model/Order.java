@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Цымбалюк Сергей on 05.09.2016.
+ * Created by Tsymbaliuk Serhii on 05.09.2016.
  */
 @Entity
 @Table(name = "orders")

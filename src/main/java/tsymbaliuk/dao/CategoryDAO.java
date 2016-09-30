@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Created by Цымбалюк Сергей on 31.08.2016.
+ * Created by Tsymbaliuk Serhii on 31.08.2016.
  */
 public interface CategoryDAO {
     public void addCategory(Category category);

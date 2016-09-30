@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by Цымбалюк Сергей on 30.08.2016.
+ * Created by Tsymbaliuk Serhii on 30.08.2016.
  */
 @Entity
 @Table(name = "categories")

@@ -10,7 +10,7 @@ import tsymbaliuk.model.Category;
 import java.util.List;
 
 /**
- * Created by Цымбалюк Сергей on 04.09.2016.
+ * Created by Tsymbaliuk Serhii on 04.09.2016.
  */
 @Service
 public class CategoryDaoImpl implements CategoryDAO {
