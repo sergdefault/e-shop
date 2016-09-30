@@ -1,19 +1,25 @@
-package tsymbaliuk.dao.daoImpl;
+package tsymbaliuk.dao.impl;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import tsymbaliuk.dao.CategoryDAO;
 import tsymbaliuk.model.Category;
 import tsymbaliuk.util.HibernateUtil;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**
  * Created by Цымбалюк Сергей on 04.09.2016.
  */
+@Service
 public class CategoryDaoImpl implements CategoryDAO {
+
+    @Autowired
+    private SessionFactory sessionFactory;
     @Override
     public void addCategory(Category category){
         SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
@@ -31,7 +37,6 @@ public class CategoryDaoImpl implements CategoryDAO {
 
     @Override
     public void updateCategory(Category category) {
-        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         try {
             session = HibernateUtil.getSessionFactory().openSession();
@@ -48,7 +53,6 @@ public class CategoryDaoImpl implements CategoryDAO {
 
     @Override
     public Category getCategoryById(int category_id)  {
-        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         Category category = null;
         try {
@@ -64,22 +68,27 @@ public class CategoryDaoImpl implements CategoryDAO {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public  List<Category> getAllCategories()  {
-        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
-        Session session = sessionFactory.openSession();
-        List<Category> categories = new ArrayList<>();
-        try {
-            session.beginTransaction();
-            categories=session.createCriteria(Category.class).list();
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-//        finally {
-//            session.getTransaction().commit();
-//            sessionFactory.close();
+//        SessionFactory sessionFactory= HibernateUtil.getSessionFactory();
+//        Session session = sessionFactory.openSession();
+//        List<Category> categories = new ArrayList<>();
+//        try {
+//            session.beginTransaction();
+//            categories=session.createCriteria(Category.class).list();
+//
+//        }catch (Exception e){
+//            e.printStackTrace();
 //        }
-        return categories;
+////        finally {
+////            session.getTransaction().commit();
+////            sessionFactory.close();
+////        }
+//        return categories;
+        Criteria criteria = sessionFactory.
+                getCurrentSession().
+                createCriteria(Category.class);
+        return criteria.list();
     }
 
 

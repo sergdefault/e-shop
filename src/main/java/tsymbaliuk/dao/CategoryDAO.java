@@ -10,9 +10,9 @@ import java.util.List;
  * Created by Цымбалюк Сергей on 31.08.2016.
  */
 public interface CategoryDAO {
-    public void addCategory(Category category) throws SQLException;
-    public void updateCategory(Category category) throws SQLException;
-    public Category getCategoryById(int category_id) throws SQLException;
-    public List<Category> getAllCategories() throws SQLException;
-    public void deleteCategory(Category category) throws SQLException;
+    public void addCategory(Category category);
+    public void updateCategory(Category category);
+    public Category getCategoryById(int category_id);
+    public List<Category> getAllCategories();
+    public void deleteCategory(Category category);
 }

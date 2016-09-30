@@ -1,22 +1,28 @@
 package tsymbaliuk.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.portlet.ModelAndView;
-import tsymbaliuk.dao.daoImpl.CategoryDaoImpl;
-import tsymbaliuk.model.Category;
-
-import java.util.ArrayList;
+import tsymbaliuk.dao.impl.CategoryDaoImpl;
+import tsymbaliuk.service.CategoryService;
 
 @Controller
+//@Configuration
+//@ComponentScan("tsymbaliuk.service")
 public class IndexController {
+
+	@Autowired
+	public CategoryService categoryService;
 
 	@RequestMapping("/index")
 	public String index(Model model) {
-		model.addAttribute("categories",new CategoryDaoImpl().getAllCategories());
+		model.addAttribute("categories",categoryService.getAllCategories());
 		return "index";
 	}
 	@RequestMapping("/index/{category_id}")
