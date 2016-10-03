@@ -63,24 +63,24 @@
     </nav>
     <div class="row">
         <div class="col-md-2">
-        <div id="sidebar">
-            <ul class="nav nav-pills nav-stacked">
-                <tiles:insertAttribute name="menu"/>
-                <br><br>
-            </ul>
-        </div>
+            <div id="sidebar">
+                <ul class="nav nav-pills nav-stacked">
+                    <tiles:insertAttribute name="menu"/>
+                    <br><br>
+                </ul>
+            </div>
         </div>
         <div class="col-md-9">
-        <div id="container">
-            <tiles:insertAttribute name="body"/>
-            <br><br>
-            <div style="  position: absolute; bottom: 15px;">
-                <center>
-                    <tiles:insertAttribute name="footer"/>
-                </center>
+            <div id="container">
+                <tiles:insertAttribute name="body"/>
+                <br><br>
+                <div style="  position: absolute; bottom: 15px;">
+                    <center>
+                        <tiles:insertAttribute name="footer"/>
+                    </center>
+                </div>
             </div>
         </div>
-            </div>
 
     </div>
     <div style="  position: absolute; bottom: 15px;">

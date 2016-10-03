@@ -7,12 +7,12 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Created by Tsymbaliuk Serhii on 31.08.2016.
+ * Created by Цымбалюк Сергей on 31.08.2016.
  */
 public interface CategoryDAO {
-    public void addCategory(Category category);
-    public void updateCategory(Category category);
-    public Category getCategoryById(int category_id);
+    public void addCategory(Category category) ;
+    public void updateCategory(Category category) ;
+    public Category getCategoryById(int category_id) ;
     public List<Category> getAllCategories();
-    public void deleteCategory(int category_id);
+    public void deleteCategory(Category category) ;
 }
