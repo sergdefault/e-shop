@@ -54,20 +54,16 @@ public class CategoryDaoImpl implements CategoryDAO {
     @Override
     @SuppressWarnings("unchecked")
     public List<Category> getAllCategories() {
-        Criteria criteria = sessionFactory.
-                getCurrentSession().
-                createCriteria(Category.class);
-        return criteria.list();
+            Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Category.class);
+            return criteria.list();
     }
-
 
     @Override
-    public void deleteCategory(int category_id) {
+    public void deleteCategory(Category category) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
-        session.delete(category_id);
+        session.delete(category.getCategory_id());
         session.getTransaction().commit();
-
-
     }
+
 }
