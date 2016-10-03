@@ -11,11 +11,11 @@ import tsymbaliuk.service.ProductService;
 @Service
 public class ProductServiceImpl implements ProductService{
 
-//    @Autowired
-//    private  ProductDAO productDAO;
+    @Autowired
+    private  ProductDAO productDAO;
 
     @Override
     public void getAllproductByCategoryId(int category_id) {
-       // productDAO.getAllProductByCategoryId(category_id);
+       productDAO.getAllProductByCategoryId(category_id);
     }
 }
