@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import org.springframework.web.bind.annotation.RestController;
 import tsymbaliuk.service.CategoryService;
 
 @Controller
@@ -20,9 +21,5 @@ public class IndexController {
 		model.addAttribute("categories",categoryService.getAllCategories());
 		return "index";
 	}
-	@RequestMapping("/index/{category_id}")
-	public String products(@PathVariable int category_id) {
-		System.out.println(category_id);
-		return "index";
-	}
+
 }

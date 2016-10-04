@@ -26,10 +26,22 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
+    @Column (name="img_name")
+    private String imgName;
+
+
     @ManyToMany(mappedBy = "products")
     private List <Order> orders =new ArrayList<>();
 
     public Product() {
+    }
+
+    public String getImgName() {
+        return imgName;
+    }
+
+    public void setImgName(String imgName) {
+        this.imgName = imgName;
     }
 
     public List<Order> getOrders() {

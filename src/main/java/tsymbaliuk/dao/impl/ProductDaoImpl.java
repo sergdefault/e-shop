@@ -1,10 +1,12 @@
 package tsymbaliuk.dao.impl;
 
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tsymbaliuk.dao.ProductDAO;
+import tsymbaliuk.model.Category;
 import tsymbaliuk.model.Product;
 
 import java.util.List;
@@ -20,8 +22,7 @@ public class ProductDaoImpl implements ProductDAO {
 
     @Override
     public List<Product> getAllProductByCategoryId(int category_id) {
-        Query query = sessionFactory.getCurrentSession().createQuery("from products where category = :category ");
-        query.setParameter("category", category_id);
+        Query query = sessionFactory.getCurrentSession().createQuery("from Product where category_id =  "+category_id);
         List list = query.list();
         return list;
     }
