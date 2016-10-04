@@ -74,20 +74,17 @@
             <div id="container">
                 <tiles:insertAttribute name="body"/>
                 <br><br>
-                <div style="  position: absolute; bottom: 15px;">
-                    <center>
-                        <tiles:insertAttribute name="footer"/>
-                    </center>
-                </div>
             </div>
         </div>
 
     </div>
-    <div style="  position: absolute; bottom: 15px;">
-        <center>
-            <tiles:insertAttribute name="footer"/>
-        </center>
-    </div>
 </div>
+<footer>
+    <center>
+        <tiles:insertAttribute name="footer"/>
+    </center>
+</footer>
+</div>
+
 </body>
 </html>
