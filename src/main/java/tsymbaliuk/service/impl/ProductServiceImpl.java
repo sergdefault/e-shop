@@ -24,4 +24,10 @@ public class ProductServiceImpl implements ProductService{
     public List<Product> getAllproductByCategoryId(int category_id) {
         return productDAO.getAllProductByCategoryId(category_id);
     }
+
+    @Override
+    @Transactional
+    public Product getProductByProductId(int product_id) {
+        return productDAO.getProductById(product_id);
+    }
 }

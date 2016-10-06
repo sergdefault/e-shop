@@ -6,6 +6,7 @@
     <definition name="common" template="/WEB-INF/layout/classic.jsp">
         <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
     </definition>
+
     <definition name="index" extends="common">
         <put-attribute name="title" value="e-shop"/>
         <put-attribute name="menu" value="/WEB-INF/jsp/common_menu.jsp"/>
@@ -23,6 +24,13 @@
     <definition name="products" extends="common">
         <put-attribute name="title" value="Users"/>
         <put-attribute name="body" value="/WEB-INF/jsp/products.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/common_menu.jsp"/>
+        <put-attribute name="current" value="about"/>
+    </definition>
+
+    <definition name="product_details" extends="common">
+        <put-attribute name="title" value="Users"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/product_details.jsp"/>
         <put-attribute name="menu" value="/WEB-INF/jsp/common_menu.jsp"/>
         <put-attribute name="current" value="about"/>
     </definition>

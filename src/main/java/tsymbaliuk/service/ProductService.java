@@ -11,4 +11,5 @@ import java.util.List;
 
 public interface ProductService {
     List<Product> getAllproductByCategoryId(int category_id);
+    Product getProductByProductId(int product_id);
 }

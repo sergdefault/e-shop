@@ -5,6 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tsymbaliuk.dao.ProductDAO;
 import tsymbaliuk.model.Category;
 import tsymbaliuk.model.Product;
@@ -25,5 +26,12 @@ public class ProductDaoImpl implements ProductDAO {
         Query query = sessionFactory.getCurrentSession().createQuery("from Product where category_id =  "+category_id);
         List list = query.list();
         return list;
+    }
+
+    @Override
+    public Product getProductById(int product_id) {
+        Product product= null;
+        product = (Product) sessionFactory.getCurrentSession().get(Product.class, product_id);
+        return product;
     }
 }
