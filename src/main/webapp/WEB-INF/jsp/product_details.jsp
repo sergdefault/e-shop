@@ -18,7 +18,7 @@
             <h4 class="media-heading"> <center>${product.description}</center></h4>
         </div>
     </div>
-    <div class="col-md-10">
-        <h4 class="media-heading"> <center>${product.description}</center></h4>
-    </div>
+</div>
+<div class="col-md-10">
+    <h4 class="media-heading"> <center>${product.description}</center></h4>
 </div>

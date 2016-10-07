@@ -2,6 +2,8 @@
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,6 +55,7 @@
                 <ul class="nav navbar-nav">
                     <li class="${current == 'index' ? 'active' :''}"><a href="<spring:url value="/"/> ">Home</a></li>
                     <li class="${current == 'about' ? 'active' :''}"><a href="<spring:url value="/about.html"/>">About</a></li>
+                    <li class="${current == 'register' ? 'active' :''}"><a href="<spring:url value="/register.html"/>">Register</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

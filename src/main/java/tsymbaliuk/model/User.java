@@ -16,8 +16,8 @@ public class User {
     private int user_id;
     @Column(name = "email")
     private String email;
-    @Column(name = "login")
-    private String login;
+    @Column(name = "name")
+    private String name;
     @Column(name = "password")
     private String password;
 
@@ -64,12 +64,12 @@ public class User {
         this.email = email;
     }
 
-    public String getLogin() {
-        return login;
+    public String getName() {
+        return name;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -78,5 +78,17 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "user_id=" + user_id +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", orders=" + orders +
+                ", roles=" + roles +
+                '}';
     }
 }

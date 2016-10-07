@@ -35,4 +35,11 @@
         <put-attribute name="current" value="about"/>
     </definition>
 
+    <!--<definition name="user_register" extends="common">-->
+        <!--<put-attribute name="title" value="Users"/>-->
+        <!--<put-attribute name="body" value="/WEB-INF/jsp/user_register.jsp"/>-->
+        <!--<put-attribute name="menu" value="/WEB-INF/jsp/common_menu.jsp"/>-->
+        <!--<put-attribute name="current" value="register"/>-->
+    <!--</definition>-->
+
 </tiles-definitions>
