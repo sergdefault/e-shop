@@ -1,5 +1,7 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<li role="presentation"><a href="<c:url value="/admin/products.html"/> ">Категории-Товары</a></li>
-<li role="presentation"><a href="<c:url value="/admin/orders.html"/> ">Заказы</a></li>
-<li role="presentation"><a href="<c:url value="/admin/users.html"/> ">Пользователи</a></li>
+
+<li role="presentation"><a href="<spring:url value="/admin/category.html"/> ">Категории-Товары</a></li>
+<li role="presentation"><a href="<spring:url value="/admin/orders.html"/> ">Заказы</a></li>
+<li role="presentation"><a href="<spring:url value="/admin/users.html"/> ">Пользователи</a></li>
