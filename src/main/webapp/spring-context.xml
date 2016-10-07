@@ -43,5 +43,7 @@
           p:sessionFactory-ref="sessionFactory">
     </bean>
 
+    <import resource="WEB-INF/security.xml"/>
+
 
 </beans>

@@ -10,17 +10,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
+
 <c:forEach items="${products}" var="product">
-<div class="col-md-4">
-    <center><h1>${product.title}</h1></center>
-    <div class="media">
-        <div >
-            <a href="<spring:url value="/product/${product.id}.html"/>" >
-                <img class="media-object" src="/img/${product.imgName}.png" alt="..."/>  </a>
-        </div>
-        <div class="media-body">
-            <h4 class="media-heading"> <center>${product.description}</center></h4>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <a href="<spring:url value="/product/${product.id}.html"/>">
+                <img class="media-object" src="/img/${product.imgName}.png" alt="...">
+            </a>
+            <div class="caption">
+                <h3>${product.title}</h3>
+                <p>${product.description}</p>
+                <p><a href="<spring:url value="/product/${product.id}.html"/>" class="btn btn-primary" role="button">Просмотреть</a> </p>
+                <p><a href="<spring:url value="#"/>" class="btn btn-success" role="button">В Корзину</a> </p>
+            </div>
         </div>
     </div>
-</div>
 </c:forEach>

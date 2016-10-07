@@ -46,9 +46,10 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="${current == 'index' ? 'active' :''}"><a href="<spring:url value="/"/> ">Home</a></li>
-                    <li class="${current == 'about' ? 'active' :''}"><a href="<spring:url value="/about.html"/>">About</a></li>
-                    <li class="${current == 'register' ? 'active' :''}"><a href="<spring:url value="/register.html"/>">Register</a></li>
+                    <li><a href="<spring:url value="/"/> ">Магазин</a></li>
+                    <li><a href="<spring:url value="/about.html"/>">О нас</a></li>
+                    <li class="active"><a href="<spring:url value="/register.html"/>">Регистрация</a></li>
+                    <li class="ac"><a href="<spring:url value="/login.html"/>">Войти</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

@@ -15,31 +15,38 @@
     </definition>
 
     <definition name="about" extends="common">
-        <put-attribute name="title" value="Users"/>
+        <put-attribute name="title" value="? ???"/>
         <put-attribute name="body" value="/WEB-INF/jsp/about.jsp"/>
         <put-attribute name="menu" value="/WEB-INF/jsp/common_menu.jsp"/>
         <put-attribute name="current" value="about"/>
     </definition>
 
     <definition name="products" extends="common">
-        <put-attribute name="title" value="Users"/>
+        <put-attribute name="title" value="Products"/>
         <put-attribute name="body" value="/WEB-INF/jsp/products.jsp"/>
         <put-attribute name="menu" value="/WEB-INF/jsp/common_menu.jsp"/>
-        <put-attribute name="current" value="about"/>
+        <put-attribute name="current" value="index"/>
     </definition>
 
     <definition name="product_details" extends="common">
-        <put-attribute name="title" value="Users"/>
+        <put-attribute name="title" value="product details"/>
         <put-attribute name="body" value="/WEB-INF/jsp/product_details.jsp"/>
         <put-attribute name="menu" value="/WEB-INF/jsp/common_menu.jsp"/>
-        <put-attribute name="current" value="about"/>
+        <put-attribute name="current" value="index"/>
     </definition>
 
-    <!--<definition name="user_register" extends="common">-->
-        <!--<put-attribute name="title" value="Users"/>-->
-        <!--<put-attribute name="body" value="/WEB-INF/jsp/user_register.jsp"/>-->
-        <!--<put-attribute name="menu" value="/WEB-INF/jsp/common_menu.jsp"/>-->
-        <!--<put-attribute name="current" value="register"/>-->
-    <!--</definition>-->
+
+    <!-- admin template -->
+    <definition name="admin_panel" template="/WEB-INF/layout/admin.jsp">
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+    </definition>
+
+
+    <definition name="admin" extends="admin_panel">
+        <put-attribute name="title" value="product details"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/admin_panel.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/admin/admin_menu.jsp"/>
+        <put-attribute name="current" value="index"/>
+    </definition>
 
 </tiles-definitions>
