@@ -27,8 +27,9 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void addCategort(Category category) {
-
+    @Transactional
+    public void addCategory(Category category) {
+        categoryDAO.addCategory(category);
     }
 
     @Override
@@ -37,8 +38,9 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void deleteCategore(int category_id) {
-
+    @Transactional
+    public void deleteCategory(int category_id) {
+        categoryDAO.deleteCategory(category_id);
     }
 
     @Override

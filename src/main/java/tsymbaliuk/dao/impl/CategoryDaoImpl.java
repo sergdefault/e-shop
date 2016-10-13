@@ -1,6 +1,7 @@
 package tsymbaliuk.dao.impl;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +21,11 @@ public class CategoryDaoImpl implements CategoryDAO {
 
     @Override
     public void addCategory(Category category) {
-        Session session = sessionFactory.openSession();
-        try {
-            session.beginTransaction();
-            session.save(category);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            session.getTransaction().commit();
-            sessionFactory.close();
-        }
+        Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
+        session.save(category);
+        session.getTransaction().commit();
+
     }
 
     @Override
@@ -59,11 +55,11 @@ public class CategoryDaoImpl implements CategoryDAO {
     }
 
     @Override
-    public void deleteCategory(Category category) {
+    public void deleteCategory(int id) {
         Session session = sessionFactory.getCurrentSession();
-        session.beginTransaction();
-        session.delete(category.getCategory_id());
-        session.getTransaction().commit();
+        Query query = session.createQuery("delete Category where category_id = :category_id");
+        query.setParameter("category_id", id);
+        query.executeUpdate();
     }
 
 }

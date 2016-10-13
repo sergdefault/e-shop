@@ -56,4 +56,18 @@
         <put-attribute name="current" value="index"/>
     </definition>
 
+    <definition name="add_category" extends="common">
+        <put-attribute name="title" value="product details"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/add_category.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/admin/admin_menu.jsp"/>
+        <put-attribute name="current" value="index"/>
+    </definition>
+
+    <definition name="update_category" extends="common">
+        <put-attribute name="title" value="product details"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/admin/update_category.jsp"/>
+        <put-attribute name="menu" value="/WEB-INF/jsp/admin/admin_menu.jsp"/>
+        <put-attribute name="current" value="index"/>
+    </definition>
+
 </tiles-definitions>
